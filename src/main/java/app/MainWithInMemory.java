@@ -1,8 +1,6 @@
 package app;
 
-import data_access.DBUserDataAccessObject;
 import data_access.InMemoryUserDataAccessObject;
-import entity.CommonUserFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.logged_in.LoggedInViewModel;
 import interface_adapter.login.LoginViewModel;
@@ -12,6 +10,8 @@ import view.LoginView;
 import view.SignupView;
 import view.ViewManager;
 
+// these are checkstyle errors, but they're in the og code, so i don't think this is a me fix.
+// they'd also be kinda annoying to fix so im calling them OoS lol
 import javax.swing.*;
 import java.awt.*;
 
@@ -50,7 +50,6 @@ public class MainWithInMemory {
         final LoggedInViewModel loggedInViewModel = new LoggedInViewModel();
         final SignupViewModel signupViewModel = new SignupViewModel();
 
-        // TODO Task 1.1 in a copy of this file, change this line to use the in-memory DAO.
         final InMemoryUserDataAccessObject userDataAccessObject = new InMemoryUserDataAccessObject();
 
         final SignupView signupView = SignupUseCaseFactory.create(viewManagerModel, loginViewModel,
